@@ -1,13 +1,435 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: Verdana;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.Navbar {
+  max-width: 1600px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: snow;
+  box-shadow: 1px 4px 10px 4px #ccc;
+  width: 100%;
+  height: 60px;
+  margin-inline: auto;
+  position: relative;
+  padding-inline: 100px;
+}
+
+li,
+a {
+  list-style: none;
+  text-decoration: none;
+  color: black;
+  font-weight: 400;
+  font-size: 0.9rem;
+}
+
+.Navbar .Nav-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+}
+
+.Navbar .Nav-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+.Navbar .login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  background-color: black;
+}
+
+.Navbar .login .login-button {
+  color: white;
+  border-style: none;
+  padding: 10px 26px;
+  background-color: transparent;
+}
+
+.Navbar .Nav-menu .Nav-list li svg {
+  font-size: 1.6rem;
+}
+
+.Main-Section {
+  max-width: 1600px;
+  margin-inline: auto;
+  height: 700px;
+  width: 100%;
+  display: grid;
+  align-content: center;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding-inline: 100px;
+  background-color: snow;
+}
+
+.First-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 12px;
+}
+
+.First-container h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+  font-weight: 600;
+  font-size: 1.7rem;
+}
+
+.First-container h2 p {
+  color: orange;
+  font-size: 2.2rem;
+  letter-spacing: -0.5px;
+}
+
+.First-container p {
+  font-size: 1rem;
+  letter-spacing: -0.4px;
+  line-height: 19px;
+}
+
+.Arival-button {
+  margin-top: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.Arival-button p {
+  font-size: 0.9rem;
+  font-weight: 400;
+  /* color: transparent;
+  -webkit-text-stroke: 1px #000; */
+}
+
+.Arival-button button {
+  padding: 12px 30px;
+  border-style: none;
+  background-color: #131313;
+  color: #FFFF;
+  border-radius: 55px;
+  -webkit-border-radius: 55px;
+  -moz-border-radius: 55px;
+  -ms-border-radius: 55px;
+  -o-border-radius: 55px;
+}
+
+
+.Second-container img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+
+.Feature-section {
+  max-width: 1600px;
+  margin-inline: auto;
+  height: 300px;
+  width: 100%;
+  padding-inline: 100px;
+  background-color: snow;
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  align-content: center;
+}
+
+.Feature-section .Delivery-Section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  height: 220px;
+  width: 77%;
+  background-color: rgba(220, 217, 217, 0.3);
+  border-radius: 12px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+}
+
+.Feature-section .Second-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  flex-direction: column;
+  width: 77%;
+  border-radius: 12px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+}
+
+.Feature-section .Second-content .Money-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  background-color: rgba(220, 217, 217, 0.3);
+  padding: 10px 17px;
+  border-radius: 12px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+}
+
+.Feature-section .Second-content .Shield-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  background-color: rgba(220, 217, 217, 0.3);
+  padding: 10px 17px;
+  border-radius: 12px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+}
+
+
+
+
+.Feature-section .Safety-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  height: 220px;
+  width: 77%;
+  background-color: rgba(220, 217, 217, 0.3);
+  border-radius: 12px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+}
+
+.Feature-section #icon {
+  height: 55px;
+  width: 55px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: snow;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.Feature-section .icon #logo {
+  font-size: 1.9rem;
+}
+
+.Feature-section .Delivery-Section:hover {
+  box-shadow: 1px 1px 10px 4px #ccc;
+}
+
+.Feature-section .Money-section:hover {
+  box-shadow: 1px 1px 10px 4px #ccc;
+}
+
+.Feature-section .Shield-section:hover {
+  box-shadow: 1px 1px 10px 4px #ccc;
+}
+
+.Feature-section .Safety-section:hover {
+  box-shadow: 1px 1px 10px 4px #ccc;
+}
+
+.Company-Section {
+  max-width: 1600px;
+  margin-inline: auto;
+  padding-block: 40px;
+  width: 100%;
+  background-color: snow;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.Company-Section p {
+  font-size: 1rem;
+}
+
+.Company-Section .Company-logo img {
+  height: 95px;
+  width: 175px;
+  object-fit: cover;
+}
+
+.Company-Section .Company-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+.Footer {
+  width: 100%;
+  max-width: 1600px;
+  padding-block: 70px;
+  margin-inline: auto;
+  background-color: #131313;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  justify-items: center;
+  color: white;
+  padding-inline: 100px;
+}
+
+.Footer .Footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  gap: 10px;
+}
+
+.Footer .Footer-content :first-child {
+  font-size: 1.5rem;
+  color: orange;
+}
+
+.Footer .Footer-content p {
+  font-size: 0.9rem;
+}
+
+
+.Footer .Footer-Feature {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 10px;
+}
+
+.Footer .Footer-Feature p {
+  font-size: 0.9rem;
+}
+
+
+.Footer .Footer-Follow {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 20px;
+}
+
+.Footer .Footer-Follow .Footer-Follow-icon {
+  display: flex;
+  gap: 10px;
+}
+
+.Footer .Footer-Follow .Follow-icon {
+  height: 40px;
+  width: 40px;
+  background-color: red;
+  border-radius: 50px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+}
+
+.Footer .Footer-Contact {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  gap: 20px;
+}
+
+.Footer .Footer-Contact p {
+  font-size: 0.9rem;
+}
+
+.Footer .Footer-Contact #email {
+  padding: 7px 17px;
+  border: none;
+  outline: none;
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+}
+
+.hr{
+  color: white;
+  width: 100%;
+  background-color: #bcbbbbe7;
+  height: 7px;
+
+}
+
+.Error-Container{
+  height: 450px;
+  width: 100%;
+  max-width: 1600px;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+.Error-Container p{
+  font-size: 2rem;
+  color: #131313;
+}
+
+.Error-Container button{
+  height: 50px;
+  width: 160px;
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
 }
