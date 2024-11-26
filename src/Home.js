@@ -4,6 +4,8 @@ import { TbTruckDelivery } from "react-icons/tb";
 import { AiFillSafetyCertificate } from "react-icons/ai";
 import { GiReceiveMoney } from "react-icons/gi";
 import { GiCheckedShield } from "react-icons/gi";
+import Feature from './Feature';
+import Product from './Product';
 const Home = () => {
   return (
     <>
@@ -76,6 +78,13 @@ const Home = () => {
       {/* company section */}
 
 
+
+  <Feature/> 
+  <Product/>
+ 
+    
+ 
+ 
 
       {/* Footer section */}
       <Footer />

@@ -1,7 +1,16 @@
 import React from 'react'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Home from './Home';
+import About from './About'
+import Contact from './Contact'
+import Product from './Product'
+import Cart from './Cart'
+import SingleProduct from './SingleProduct'
+import Error from './Error'
 import Navbar from './Compnet/_Navbar';
+import Feature from './Feature';
+import Loader from './Loader/Loader';
+
 const App = () => {
   const router = createBrowserRouter([
     {
@@ -25,12 +34,20 @@ const App = () => {
       element: <><Navbar /> <Cart /> </>
     },
     {
+      path: "/Loader",
+      element: <><Navbar /> <Loader /> </>
+    },
+    {
+      path: "/Feature",
+      element: <><Navbar /> <Feature /> </>
+    },
+    {
       path: "/SingleProduct/:id",
       element: <><Navbar /> <SingleProduct /> </>
     },
     {
       path: "*",
-      element: <><Navbar /> <ErrorPage /> </>
+      element: <><Navbar /> <Error /> </>
     }
   ]);
   return (

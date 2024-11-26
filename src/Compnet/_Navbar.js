@@ -13,7 +13,9 @@ const _Navbar = () => {
             <Link to="/About"><li>About</li></Link>
             <Link to="/Product"><li>Product</li></Link>
             <Link to="/Contact"><li>Contact</li></Link>
+            <Link to="/Feature"><li>feature</li></Link>
             <Link to="/Cart"><li><BsCart4 className='Cart' /></li></Link>
+            <Link to="/Loader"><li>Loader</li></Link>
           </div>
           <div className='login'>
             <button className='login-button'>Log in</button>
