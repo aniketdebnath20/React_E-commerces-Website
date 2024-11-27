@@ -7,24 +7,23 @@ const Product = (curELm) => {
   const { id, name, image, price, category } = curELm;
   return (
     <>
-    <Link to={`/SingleProduct/${id}`}>
+      <Link to={`/SingleProduct/${id}`} id='single-product-link' >
 
-      <div className='container'>
-        <figure>
-          <img src={image} alt={name} width={"200px"} />
-          <figcaption className='caption'>{category}</figcaption>
-        </figure>
+        <div className='Main-container'>
+          <div className='hover'></div>
+          <div>
+            <img src={image} alt={name} width={"200px"} />
+            <div className='caption'>{category}</div>
+          </div>
 
-        <div className='card-data'>
-          <h2>{name}</h2>
-          <p>{<FormatPrice price={price} />}</p>
+          <div className='card-data'>
+            <p>{name}</p>
+            <p>{<FormatPrice price={price} />}</p>
+          </div>
+
         </div>
 
-      </div>
-      <br></br>
-      <br></br>
-
-    </Link>
+      </Link>
     </>
   )
 

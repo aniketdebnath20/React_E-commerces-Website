@@ -20,7 +20,7 @@ const Home = () => {
           </div>
         </div>
         <div className='Second-container'>
-          <img src='../public/Image/istockphoto-1388117846-612x612.jpg' alt="image" />
+            <div className='img'></div>
         </div>
       </div>
       {/* Main section */}
@@ -79,10 +79,7 @@ const Home = () => {
 
 
 
-  <Feature/> 
-  <Product/>
- 
-    
+  <Feature/>     
  
  
 
