@@ -1,5 +1,4 @@
 import { useProductContext } from './Context/ProductContext'
-import Loader from './Loader/Loader';
 import Product from './Product';
 
 const Feature = () => {
@@ -10,7 +9,6 @@ const Feature = () => {
   if (isloading) {
     return <div>
       <h1> .....Loading  </h1>
-      <Loader />
     </div>;
   }
 

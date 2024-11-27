@@ -1,4 +1,5 @@
 import React from 'react'
+import { useProductContext } from '../Context/ProductContext';
 
 const Loader = () => {
     // function load() {
@@ -12,6 +13,20 @@ const Loader = () => {
     // }
 
     // load();
+
+  const { isloading } = useProductContext();
+
+  if(isloading === true){
+
+    <span class="loader"></span>
+
+  }
+
+  else{
+    <h1>error</h1>
+    console.log("eroro")
+  }
+  
   return (
     <>
     <span class="loader"></span>

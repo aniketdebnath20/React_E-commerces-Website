@@ -18,4 +18,3 @@ const productReducer = (state, action) => {
 };
 
 export default productReducer;
-<span class="loader"></span>
