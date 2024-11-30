@@ -38,7 +38,7 @@ const _Footer = () => {
       </div>
       <hr className='hr' />
       <div className='Footer-Last-Section'>
-
+        <p>Desgin and Develop by <p className='P'>ANIKET</p></p>
       </div>
     </>
   )

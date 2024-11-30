@@ -1,16 +1,19 @@
 import React from 'react'
-import Footer from './Compnet/_Footer';
+import { Link } from 'react-router-dom';
 
 const Error = () => {
     return (
         <>
 
             <div className='Error-Container'>
-                <p>Non Exist Page Please Go Balck to The Home Page</p>
-                <button>Home Page</button>
-            </div>
 
-            <Footer />
+                <h2>Look like you come to wrong page</h2>
+                <p>Lets's get you back</p>
+                
+                <Link to="/">
+                    <button>Home Page</button>
+                </Link>
+            </div>
         </>
     )
 }

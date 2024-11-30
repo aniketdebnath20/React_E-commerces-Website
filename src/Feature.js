@@ -12,7 +12,7 @@ const Feature = () => {
 
   return (
     <>
-      <h1> Check out Product</h1>
+      <p className='Product-heading'> Exclosive Offer</p>
 
       <div className='product-flex'>
       {featureProducts.map((curELm) => {

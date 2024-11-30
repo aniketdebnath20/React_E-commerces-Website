@@ -9,14 +9,16 @@ const initialState = {
     isLoading: false,  // Use camelCase for consistency
     isError: false,    // Use camelCase for consistency
     products: [],
-    featureProducts: []  // Use camelCase for consistency
+    featureProducts: [],  // Use camelCase for consistency
+    isSingleLoading: false,
+    SingleProduct: {},
 };
 
 const AppProvider = ({ children }) => {  // Fix: children prop should be lowercase
     const [state, dispatch] = useReducer(reducer, initialState);
 
     const getProducts = async (url) => {
-        dispatch({ type: "SET_LOADING" }); // Fixed typo
+        dispatch({ type: "SET_LOADING" }); // Fixed type
         try {
             const res = await axios.get(url);
             const products = await res.data;
@@ -26,12 +28,32 @@ const AppProvider = ({ children }) => {  // Fix: children prop should be lowerca
         }
     };
 
+
+    // sigle api call function
+
+    const getSingleProduct = async (url) => {
+
+        dispatch({ type: "SET_SINFLE_LOADING" }); // Fixed typo
+        try {
+            const res = await axios.get(url);
+            const SingleProduct = await res.data;
+            dispatch({ type: "SET_SINGLE_PRODUCT", payload: SingleProduct });
+        }
+
+        catch (error) {
+            dispatch({ type: "API_SINGLE_ERROR" });  // Fixed typo in action type
+
+        }
+    }
+
+
+
     useEffect(() => {
         getProducts(API);
     }, []);
 
     return (
-        <AppContext.Provider value={{ ...state }}>
+        <AppContext.Provider value={{ ...state, getSingleProduct }}>
             {children}
         </AppContext.Provider>
     );

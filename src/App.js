@@ -8,7 +8,6 @@ import Cart from './Cart'
 import SingleProduct from './SingleProduct'
 import Error from './Error'
 import Navbar from './Compnet/_Navbar';
-import Feature from './Feature';
 import Loader from './Loader/Loader';
 
 const App = () => {
@@ -38,16 +37,12 @@ const App = () => {
       element: <><Navbar /> <Loader /> </>
     },
     {
-      path: "/Feature",
-      element: <><Navbar /> <Feature /> </>
-    },
-    {
       path: "/SingleProduct/:id",
       element: <><Navbar /> <SingleProduct /> </>
     },
     {
       path: "*",
-      element: <><Navbar /> <Error /> </>
+      element: <> <Error /> </>
     }
   ]);
   return (

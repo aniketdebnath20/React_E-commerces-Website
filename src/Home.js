@@ -5,7 +5,6 @@ import { AiFillSafetyCertificate } from "react-icons/ai";
 import { GiReceiveMoney } from "react-icons/gi";
 import { GiCheckedShield } from "react-icons/gi";
 import Feature from './Feature';
-import Product from './Product';
 const Home = () => {
   return (
     <>
@@ -19,10 +18,7 @@ const Home = () => {
             <button>Click</button>
           </div>
         </div>
-        <div className='Second-container'>
-            <div className='img'></div>
         </div>
-      </div>
       {/* Main section */}
 
 
