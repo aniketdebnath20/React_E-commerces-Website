@@ -8,7 +8,6 @@ import Cart from './Cart'
 import SingleProduct from './SingleProduct'
 import Error from './Error'
 import Navbar from './Compnet/_Navbar';
-import Loader from './Loader/Loader';
 
 const App = () => {
   const router = createBrowserRouter([
@@ -31,10 +30,6 @@ const App = () => {
     {
       path: "/Cart",
       element: <><Navbar /> <Cart /> </>
-    },
-    {
-      path: "/Loader",
-      element: <><Navbar /> <Loader /> </>
     },
     {
       path: "/SingleProduct/:id",
