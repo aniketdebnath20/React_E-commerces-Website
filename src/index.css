@@ -310,10 +310,54 @@ a {
   font-size: 1rem;
 }
 
-.Company-Section .Company-logo img {
+.Company-Section .Company-logo .img-1 {
   height: 95px;
   width: 175px;
-  object-fit: cover;
+  background-position: center;
+  background-color: snow;
+  background-size: cover;
+  background-image: url('../public//Image/download\ \(2\).jpg');
+}
+
+.Company-Section .Company-logo .img-2 {
+  height: 95px;
+  width: 175px;
+  background-position: center;
+  background-color: snow;
+  background-size: cover;
+  background-image: url('../public//Image/OIP\ \(1\).jpg');
+}
+
+
+
+.Company-Section .Company-logo .img-3 {
+  height: 95px;
+  width: 175px;
+  background-position: center;
+  background-color: snow;
+  background-size: cover;
+  background-image: url('../public//Image/OIP.jpg');
+}
+
+
+
+.Company-Section .Company-logo .img-4 {
+  height: 95px;
+  width: 175px;
+  background-position: center;
+  background-color: snow;
+  background-size: cover;
+  background-image: url('../public//Image/OIP\ \(2\).jpg');
+}
+
+
+.Company-Section .Company-logo .img-5 {
+  height: 95px;
+  width: 175px;
+  background-position: center;
+  background-color: snow;
+  background-size: cover;
+  background-image: url('../public//Image/download.jpg');
 }
 
 .Company-Section .Company-logo {
@@ -492,7 +536,7 @@ a {
 
 /*  loader    */
 
-.loader-container{
+.loader-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -510,8 +554,9 @@ a {
   box-sizing: border-box;
   animation: rotation 2s linear infinite;
 }
+
 .loader::after {
-  content: '';  
+  content: '';
   box-sizing: border-box;
   position: absolute;
   left: 50%;
@@ -526,11 +571,12 @@ a {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
-} 
-  
+}
+
 
 /*  loader    */
 
@@ -541,6 +587,7 @@ a {
   align-content: center;
   gap: 20px;
   padding-inline: 100px;
+  margin-top: -24px;
   width: 100%;
   max-width: 1600px;
   margin-inline: auto;
@@ -553,12 +600,12 @@ a {
   background-color: snow;
   max-width: 1600px;
   margin-inline: auto;
+  font-weight: 600;
+  color: #FFFF;
+  -webkit-text-stroke: 1px #2d2d2d;
+  font-size: 2.5rem;
   padding-inline: 100px;
-  font-size: 2rem;
-  font-weight: 500;
-
 }
-
 
 .Main-container {
   position: relative;
@@ -670,10 +717,10 @@ a {
   margin-block: auto;
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(2,1fr);
+  grid-template-columns: repeat(2, 1fr);
 }
 
-.image-section .side-image{
+.image-section .side-image {
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -682,7 +729,7 @@ a {
   margin-block: auto;
 }
 
-.image-section .side-image .image{
+.image-section .side-image .image {
   height: 100px;
   width: 130px;
   object-fit: cover;
@@ -693,14 +740,18 @@ a {
   -o-border-radius: 7px;
 }
 
-.image-section .main-image{
+.image-section .side-image .image:hover {
+  scale: 1.1;
+}
+
+.image-section .main-image {
   height: 60%;
   width: 100%;
   margin-block: auto;
   width: 100%;
 }
 
-.image-section .main-image img{
+.image-section .main-image img {
   height: 100%;
   width: 100%;
   object-fit: cover;
@@ -728,7 +779,7 @@ a {
   gap: 10px;
 }
 
-.singleProduct-customer-view .singleProduct-stars span{
+.singleProduct-customer-view .singleProduct-stars span {
   font-size: 1.1rem;
   color: darkorange;
 }
@@ -932,4 +983,99 @@ a {
 }
 
 
+.image-slider {
+  display: flex;
+  overflow-x: auto;
+  gap: 10px;
+}
 
+.image-1 {
+  width: 100%;
+  height: auto;
+  max-width: 300px;
+  object-fit: cover;
+}
+
+.image-slider-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-slider {
+  margin: 0 20px;
+}
+
+.image-1 {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  object-fit: cover;
+}
+
+button {
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #555;
+}
+
+.prev-btn {
+  margin-right: 20px;
+}
+
+.next-btn {
+  margin-left: 20px;
+  background-image: url("../public/Image/istockphoto-1067203316-612x612.jpg");
+}
+
+
+
+/* .image-slider{
+  height: 370px;
+  width: 100%;
+  background-color: pink;
+  padding: 20px;
+  position: relative;
+  margin: 20px 0px;
+}
+
+.image-slider .image-1{
+  background-image: url("https://api.unsplash.com/");
+  
+ height: 100%;
+ width: 100%;
+ background-size: cover;
+ background-position: center;
+ background-repeat: no-repeat;
+ position: absolute;
+ top: 0;
+ left: 0;
+}
+
+
+.image-slider .image-2{
+ height: 100%;
+ width: 100%;
+ background-size: cover;
+ background-position: center;
+ background-repeat: no-repeat;
+ position: absolute;
+ top: 0;
+ left: 0;
+}
+
+.image-slider .button{
+  background-color: red;
+  z-index: 20;
+  position: relative;
+  display:flex;
+  justify-content: space-between;
+  margin-top: 60px;
+
+} */

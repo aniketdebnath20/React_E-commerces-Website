@@ -1,15 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Footer from './Compnet/_Footer'
 import { TbTruckDelivery } from "react-icons/tb";
 import { AiFillSafetyCertificate } from "react-icons/ai";
 import { GiReceiveMoney } from "react-icons/gi";
 import { GiCheckedShield } from "react-icons/gi";
 import Feature from './Feature';
+import ImageSLider from './ImageSLider';
 const Home = () => {
+
   return (
     <>
-        {/* Main section */}
-        <div className='Main-Section'>
+      {/* Main section */}
+      <div className='Main-Section'>
         <div className='First-container'>
           <h2>Welcome the <p> Aniket Store </p> </h2>
           <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Impedit aperiam expedita officia incidunt eius cum fugiat sunt culpa dolorum, quia, amet odio itaque delectus vel laborum debitis cupiditate? Mollitia, repellat!</p>
@@ -18,7 +20,7 @@ const Home = () => {
             <button>Click</button>
           </div>
         </div>
-        </div>
+      </div>
       {/* Main section */}
 
 
@@ -58,26 +60,32 @@ const Home = () => {
       {/* Feature section */}
 
 
+
+      {/*  */}
+
+      <ImageSLider />
+
+
+      {/*  */}
+
+
+      <Feature />
+
+
       {/* company section */}
       <div className='Company-Section'>
 
         <p>Trusted By 1000+ Company</p>
         <div className='Company-logo'>
-          <img src="../public/Image/OIP (1).jpg" alt="" />
-          <img src="../public/Image/OIP (2).jpg" alt="" />
-          <img src="../public/Image/OIP.jpg" alt="" />
-          <img src="../public/Image/download.jpg" alt="" />
-          <img src="../public/Image/download (2).jpg" alt="" />
+          <div className='img-1'></div>
+          <div className='img-2'></div>
+          <div className='img-3'></div>
+          <div className='img-4'></div>
+          <div className='img-5'></div>
         </div>
 
       </div>
       {/* company section */}
-
-
-
-  <Feature/>     
- 
- 
 
       {/* Footer section */}
       <Footer />
