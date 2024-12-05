@@ -5,16 +5,11 @@ function GridView({ products }) {
     console.log(products)
     return (
         <>
-
-                {
-                    products.map((curElm) => {
-                        return <Product key={curElm.id}  {...curElm} />
-                    })
-                }
-
-
-
-
+            {
+                products.map((curElm) => {
+                    return <Product key={curElm.id}  {...curElm} />
+                })
+            }
         </>
     )
 }
