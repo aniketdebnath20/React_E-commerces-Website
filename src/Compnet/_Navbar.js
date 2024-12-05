@@ -12,6 +12,7 @@ const _Navbar = () => {
           <div className='Nav-list'>
             <Link to="/About"><li>About</li></Link>
             <Link to="/Product"><li>Product</li></Link>
+            <Link to="/ProductPage"><li>ProductPage</li></Link>
             <Link to="/Contact"><li>Contact</li></Link>
             <Link to="/Cart"><li><BsCart4 className='Cart' /></li></Link>
           </div>

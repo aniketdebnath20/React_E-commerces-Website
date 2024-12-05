@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Footer from './Compnet/_Footer'
 import { TbTruckDelivery } from "react-icons/tb";
 import { AiFillSafetyCertificate } from "react-icons/ai";

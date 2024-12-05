@@ -8,6 +8,7 @@ import Cart from './Cart'
 import SingleProduct from './SingleProduct'
 import Error from './Error'
 import Navbar from './Compnet/_Navbar';
+import ProductPage from './ProductPage';
 
 const App = () => {
   const router = createBrowserRouter([
@@ -34,6 +35,10 @@ const App = () => {
     {
       path: "/SingleProduct/:id",
       element: <><Navbar /> <SingleProduct /> </>
+    },
+    {
+      path: "/ProductPage",
+      element: <><Navbar /> <ProductPage /> </>
     },
     {
       path: "*",
