@@ -20,6 +20,9 @@ const Home = () => {
             <button>Click</button>
           </div>
         </div>
+        <div className='Second-Container'>
+           <div className='img'></div>
+        </div>
       </div>
       {/* Main section */}
 
@@ -78,7 +81,6 @@ const Home = () => {
         <p>Trusted By 1000+ Company</p>
         <div className='Company-logo'>
           <div className='img-1'></div>
-          <div className='img-2'></div>
           <div className='img-3'></div>
           <div className='img-4'></div>
           <div className='img-5'></div>

@@ -33,6 +33,12 @@ a {
   font-size: 0.9rem;
 }
 
+.Navbar .Main_logo li{
+  color: orange;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
 .Navbar .Nav-menu {
   display: flex;
   justify-content: center;
@@ -71,25 +77,25 @@ a {
 }
 
 .Main-Section {
-  background-image: url('../public/Image/istockphoto-1449490038-612x612.webp');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center calc(-50px);
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+   justify-items: center; 
+   align-items: center; 
   max-width: 1600px;
   margin-inline: auto;
   height: 600px;
   width: 100%;
   padding-inline: 100px;
+  background-color: snow;
 }
 
 .First-container {
-  padding-top: 270px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: start;
   gap: 12px;
-  width: 68%;
+  width: 100%;
 }
 
 .First-container h2 {
@@ -99,7 +105,7 @@ a {
   gap: 7px;
   font-weight: 600;
   font-size: 1.7rem;
-  color: #FFFF;
+  color: #555;
 
 }
 
@@ -107,19 +113,41 @@ a {
   color: orange;
   font-size: 2.2rem;
   letter-spacing: -0.5px;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .First-container p {
   font-size: 1rem;
   letter-spacing: -0.4px;
   line-height: 19px;
-  color: #FFFF;
-
+  color: #2d2d2d;
 }
 
+
+.Main-Section .Second-Container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 72%;
+  width: 87%;
+}
+
+.Main-Section .Second-Container .img{
+  background-image: url('../public/Image/istockphoto-1388117846-612x612.jpg');
+  background-repeat: no-repeat;
+ background-size: cover;
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+
 .Arival-button {
-  margin-top: 40px;
+  margin-top: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -127,42 +155,25 @@ a {
 }
 
 .Arival-button p {
-  font-size: 0.9rem;
-  font-weight: 400;
-  color: #FFFF;
-
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
   /* color: transparent;
   -webkit-text-stroke: 1px #000; */
 }
 
 .Arival-button button {
-  padding: 12px 30px;
+  padding: 12px 34px;
   border-style: none;
   background-color: #131313;
   color: #FFFF;
+  font-weight: 600;
   border-radius: 55px;
   -webkit-border-radius: 55px;
   -moz-border-radius: 55px;
   -ms-border-radius: 55px;
   -o-border-radius: 55px;
 }
-
-/* 
-.Second-container {
-  height: 420px;
-}
-
-.Second-container .img {
-  background-image: url('../public/Image/istockphoto-1067203316-612x612.jpg');
-  height: 100%;
-  width: 100%;
-  border-radius: 10px;
-  background-size: cover;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -o-border-radius: 10px;
-} */
 
 
 .Feature-section {
@@ -312,38 +323,27 @@ a {
   background-position: center;
   background-color: snow;
   background-size: cover;
-  background-image: url('../public//Image/download\ \(2\).jpg');
+  background-image: url('../public//Image/flipkart-logo-39906.png');
 }
-
-.Company-Section .Company-logo .img-2 {
-  height: 95px;
-  width: 175px;
-  background-position: center;
-  background-color: snow;
-  background-size: cover;
-  background-image: url('../public//Image/OIP\ \(1\).jpg');
-}
-
 
 
 .Company-Section .Company-logo .img-3 {
   height: 95px;
-  width: 175px;
+  width: 174px;
   background-position: center;
-  background-color: snow;
+  /* background-color: snow; */
   background-size: cover;
-  background-image: url('../public//Image/OIP.jpg');
+  background-image: url('../public//Image/meesho-seeklogo.svg');
 }
 
 
 
 .Company-Section .Company-logo .img-4 {
-  height: 95px;
-  width: 175px;
+  height: 90px;
+  width: 174px;
   background-position: center;
-  background-color: snow;
-  background-size: cover;
-  background-image: url('../public//Image/OIP\ \(2\).jpg');
+ object-fit: cover;
+  background-image: url('../public//Image/logo-myntra-41464.png');
 }
 
 
@@ -353,7 +353,7 @@ a {
   background-position: center;
   background-color: snow;
   background-size: cover;
-  background-image: url('../public//Image/download.jpg');
+  background-image: url('../public//Image/vecteezy_amazon-logo-png-amazon-icon-transparent-png_19766240.png');
 }
 
 .Company-Section .Company-logo {
@@ -1139,19 +1139,87 @@ button:hover {
   padding-top: 16px;
 }
 
-.filter-column .Product-section .Product-list  #single-product-link .Main-container{
-   width: 240px;
+.filter-column .Product-section .Product-list #single-product-link .Main-container {
+  width: 240px;
 }
 
-.filter-column .Product-section .Product-list  #single-product-link .Main-container .caption{
+.filter-column .Product-section .Product-list #single-product-link .Main-container .caption {
   padding: 4px 20px;
   right: 25px;
   top: 15px;
-  background-color:  rgba(204, 204, 204,0.6);
+  background-color: rgba(204, 204, 204, 0.6);
   text-transform: capitalize;
   color: #131313;
 }
 
-.filter-column .Product-section .Product-list  #single-product-link .Main-container .card-data p:first-child{
+.filter-column .Product-section .Product-list #single-product-link .Main-container .card-data p:first-child {
   font-size: 1rem;
+}
+
+
+.Product_Container_List_view .List_view{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+}
+  
+  .Product_Container_List_view{
+    margin-bottom: 50px;
+   height: 200px;
+   width: 55vw;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+  gap: 10px;
+  }
+
+  .Product_Container_List_view figure{
+    width: 130%;
+    height:100%;
+  }
+
+  .Product_Container_List_view p:nth-child(3){
+    font-size: 14px;
+    color: #555;
+    line-height: 16px;
+  }
+
+ .Product_Container_List_view  .Product_detail{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+ }
+
+ .Product_Container_List_view .Product_detail .name, .price{
+  display: flex;
+  gap: 4px;
+  color: #847d7deb;
+ }
+
+ .Product_Container_List_view .Product_detail .name p{
+  display: flex;
+  gap: 4px;
+  color: #2d2d2d;
+ }
+
+ .Product_Container_List_view .Product_detail .price p{
+  display: flex;
+  gap: 4px;
+  color: #2d2d2d;
+ }
+
+
+
+
+ .Product_Container_List_view .Product_detail .btn{
+  padding: 10px 35px;
+  margin-top: 15px;
+  border-radius: 44px;
+  -webkit-border-radius: 44px;
+  -moz-border-radius: 44px;
+  -ms-border-radius: 44px;
+  -o-border-radius: 44px;
 }
