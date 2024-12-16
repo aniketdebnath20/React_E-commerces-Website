@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import FormatPrice from './PriceFomater/FormatPrice'
 
 function ListView({ products }) {
     return (
@@ -21,7 +22,7 @@ function ListView({ products }) {
                                         Name: <p >{name} </p>
                                     </div>
                                     <div className='price'>
-                                        Price: <p> {price} </p>
+                                        Price: <p> <FormatPrice price={price} /> </p>
                                     </div>
                                     <p>  {description} </p>
 

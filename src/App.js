@@ -25,7 +25,7 @@ const App = () => {
       element: <><Navbar /> <Contact /> </>
     },
     {
-      path: "/Product",
+      path: "",
       element: <><Navbar /> <Product /> </>
     },
     {

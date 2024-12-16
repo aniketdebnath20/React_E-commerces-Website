@@ -1,7 +1,8 @@
 import { createContext, useContext, useEffect, useReducer } from "react";
 import { useProductContext } from "./ProductContext";
 import reducer from '../Reducer/FilterReducter'
-import { type } from "@testing-library/user-event/dist/type";
+// import { type } from "@testing-library/user-event/dist/type";
+// import { type } from "@testing-library/user-event/dist/type";
 
 const FilterContext = createContext();
 
@@ -10,6 +11,9 @@ const initialState = {
     All_Products: [],
     Grid_view: true,
     sorting_value: "lowest",
+    filters: {
+        text: "",
+    },
 }
 
 export const FilterContextProvider = ({ children }) => {
@@ -30,17 +34,28 @@ export const FilterContextProvider = ({ children }) => {
 
     //sortin gdunc tion
 
-    const sorting = () => {
-        return dispatch({ type: "GET_SORT-VALUE" });
+    const sorting = (event) => {
+        let userValue = event.target.value;
+        dispatch({ type: "GET_SORT-VALUE", payload: userValue });
+    };
 
+    // filter product by serach
+
+    const updateFilterProduct = (event) => {
+
+        let name = event.target.name;
+        let value = event.target.value;
+
+        return dispatch({ type: "UPDATE_FILTER_PRODUCT", payload: { name, value } })
 
     }
 
 
-    useEffect(() => {
-        
 
-    },[state.sorting_value])
+    useEffect(() => {
+        dispatch({ type: "FILTER_SORT"})
+        dispatch({ type: "SORTING_PRODUCT" });
+    }, [products, state.sorting_value, state.filters])
 
 
     useEffect(() => {
@@ -49,7 +64,7 @@ export const FilterContextProvider = ({ children }) => {
 
 
     return (
-        <FilterContext.Provider value={{ ...state, setGridView, setListView, sorting }}>
+        <FilterContext.Provider value={{ ...state, setGridView, setListView, sorting, updateFilterProduct }}>
             {children}
         </FilterContext.Provider>
     )
@@ -59,3 +74,5 @@ export const FilterContextProvider = ({ children }) => {
 export const useFilterContext = () => {
     return useContext(FilterContext);
 }
+
+

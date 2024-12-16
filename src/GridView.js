@@ -2,7 +2,6 @@ import React from 'react'
 import Product from './Product'
 
 function GridView({ products }) {
-    console.log(products)
     return (
         <>
             {

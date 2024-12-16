@@ -3,14 +3,15 @@ import { useFilterContext } from './Context/FilterContext'
 
 function Sort() {
 
-  const { Grid_View, setGridView, setListView, Filter_Products , sorting} = useFilterContext();
+  const { Grid_View, setGridView, setListView, Filter_Products, sorting } = useFilterContext();
 
   return (
     <>
 
+
       <div className='sort'>
         <button className={Grid_View ? "actvie grid" : "grid"} onClick={setGridView}>girdView</button>
-        <button className={!Grid_View ? "actvie grid" : "grid"} onClick={setListView}>listView</button>
+        <button className={!Grid_View ? "actvie grid": "grid"} onClick={setListView}>listView</button>
       </div>
 
       <div><p>
@@ -19,7 +20,7 @@ function Sort() {
 
 
 
-      <div>
+      <div className='sorting_price_prodcut_page'>
         <form action="#">
           <label htmlFor="sort"></label>
           <select name="sort" id="sort" onClick={sorting}>
