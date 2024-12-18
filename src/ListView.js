@@ -30,8 +30,6 @@ function ListView({ products }) {
                                         <button className='btn'>View</button>
                                     </Link>
                                 </div>
-
-
                             </div>
                         )
 

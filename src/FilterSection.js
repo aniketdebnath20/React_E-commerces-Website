@@ -3,7 +3,19 @@ import { useFilterContext } from './Context/FilterContext'
 
 function FilterSection() {
 
-  const { filters: { text }, updateFilterProduct } = useFilterContext();
+  const { filters: { text, category, company }, All_Products, updateFilterProduct } = useFilterContext();
+
+  const getUniqueData = (data, property) => {
+
+    let newVal = data.map((curElem) => {
+      return curElem[property];
+    })
+
+    return (newVal = ["All", ...new Set(newVal)]);
+  }
+
+  const CategoryOnlyData = getUniqueData(All_Products, "category");
+  const companyOnlyData = getUniqueData(All_Products, "company");
 
 
   return (
@@ -24,14 +36,22 @@ function FilterSection() {
           <p>Category</p>
 
           <div className='Filter_Sorting_Product'>
-            <p>All</p>
-            <p>Laptop</p>
-            <p>Computer</p>
-            <p>Accessories</p>
-            <p>Watch</p>
+            {CategoryOnlyData.map((curElm, index) => {
+              return <button key={index} type='button' name='category' value={curElm} onClick={updateFilterProduct}>  {curElm}   </button>;
+            })}
           </div>
 
         </div>
+
+        <form action='#'>
+          <select name="company" id="company" className='company' onClick={updateFilterProduct}>
+            {companyOnlyData.map((curElm, index) => {
+              return <option key={index} name='company' value={curElm}>  {curElm}   </option>;
+            })}
+          </select>
+
+
+        </form>
 
         <div className='Price_Range_Select'>
           <p>Price</p>

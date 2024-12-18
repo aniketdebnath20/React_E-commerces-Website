@@ -13,6 +13,8 @@ const initialState = {
     sorting_value: "lowest",
     filters: {
         text: "",
+        category: "All",
+        company: "All",
     },
 }
 
@@ -53,7 +55,7 @@ export const FilterContextProvider = ({ children }) => {
 
 
     useEffect(() => {
-        dispatch({ type: "FILTER_SORT"})
+        dispatch({ type: "FILTER_SORT" })
         dispatch({ type: "SORTING_PRODUCT" });
     }, [products, state.sorting_value, state.filters])
 
