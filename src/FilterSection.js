@@ -1,9 +1,12 @@
 import React from 'react'
 import { useFilterContext } from './Context/FilterContext'
+import { TiTick } from 'react-icons/ti';
+import FormatPrice from './PriceFomater/FormatPrice'
+
 
 function FilterSection() {
 
-  const { filters: { text, category, company }, All_Products, updateFilterProduct } = useFilterContext();
+  const { filters: { text, category, company, color, price, minPrice, maxPrice }, All_Products, updateFilterProduct } = useFilterContext();
 
   const getUniqueData = (data, property) => {
 
@@ -11,12 +14,19 @@ function FilterSection() {
       return curElem[property];
     })
 
+    if (property === "colors") {
+      // return  newVal = (newVal = ["ALL", ...new Set([].concat(...newVAl))];
+      newVal = newVal.flat();
+    }
+
     return (newVal = ["All", ...new Set(newVal)]);
   }
 
   const CategoryOnlyData = getUniqueData(All_Products, "category");
   const companyOnlyData = getUniqueData(All_Products, "company");
+  const ColorData = getUniqueData(All_Products, "colors");
 
+  // console.log(ColorData);
 
   return (
 
@@ -44,6 +54,7 @@ function FilterSection() {
         </div>
 
         <form action='#'>
+          <h2>company</h2>
           <select name="company" id="company" className='company' onClick={updateFilterProduct}>
             {companyOnlyData.map((curElm, index) => {
               return <option key={index} name='company' value={curElm}>  {curElm}   </option>;
@@ -53,9 +64,24 @@ function FilterSection() {
 
         </form>
 
+
+        <div>
+
+          {
+            ColorData.map((curColor, index) => {
+              if (curColor === "All") {
+                return <button key={index} value={curColor} name='color' onClick={updateFilterProduct} >All </button>
+              }
+              return <button key={index} value={curColor} name='color' style={{ backgroundColor: curColor }} onClick={updateFilterProduct} > {color === curColor ? <TiTick /> : null} </button>
+            })
+          }
+
+        </div>
+
         <div className='Price_Range_Select'>
           <p>Price</p>
-          <input type="range" className='range' />
+          <FormatPrice price={price} />
+          <input type="range" name="price" value={price} min={minPrice} max={maxPrice} onChange={updateFilterProduct} />
         </div>
 
         <button className='Clear_Filter_Product'>Clear Product</button>
