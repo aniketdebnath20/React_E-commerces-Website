@@ -6,7 +6,7 @@ import FormatPrice from './PriceFomater/FormatPrice'
 
 function FilterSection() {
 
-  const { filters: { text, category, company, color, price, minPrice, maxPrice }, All_Products, updateFilterProduct } = useFilterContext();
+  const { filters: { text, category, company, color, price, minPrice, maxPrice, filter }, All_Products, clearFilter, updateFilterProduct } = useFilterContext();
 
   const getUniqueData = (data, property) => {
 
@@ -47,14 +47,14 @@ function FilterSection() {
 
           <div className='Filter_Sorting_Product'>
             {CategoryOnlyData.map((curElm, index) => {
-              return <button key={index} type='button' name='category' value={curElm} onClick={updateFilterProduct}>  {curElm}   </button>;
+              return <button key={index} type='button' name='category' className='Filter_Category' value={curElm} onClick={updateFilterProduct}>  {curElm}   </button>;
             })}
           </div>
 
         </div>
 
         <form action='#'>
-          <h2>company</h2>
+          <p className='Company_Filter_Section'>company</p>
           <select name="company" id="company" className='company' onClick={updateFilterProduct}>
             {companyOnlyData.map((curElm, index) => {
               return <option key={index} name='company' value={curElm}>  {curElm}   </option>;
@@ -65,14 +65,13 @@ function FilterSection() {
         </form>
 
 
-        <div>
-
+        <div className='Color_Filter'>
           {
             ColorData.map((curColor, index) => {
               if (curColor === "All") {
-                return <button key={index} value={curColor} name='color' onClick={updateFilterProduct} >All </button>
+                return <button key={index} value={curColor} name='color' className='All_Filter_Button' onClick={updateFilterProduct} >All </button>
               }
-              return <button key={index} value={curColor} name='color' style={{ backgroundColor: curColor }} onClick={updateFilterProduct} > {color === curColor ? <TiTick /> : null} </button>
+              return <button key={index} value={curColor} name='color' className='Color_Filter_Button' style={{ backgroundColor: curColor }} onClick={updateFilterProduct} > {color === curColor ? <TiTick /> : null} </button>
             })
           }
 
@@ -84,7 +83,7 @@ function FilterSection() {
           <input type="range" name="price" value={price} min={minPrice} max={maxPrice} onChange={updateFilterProduct} />
         </div>
 
-        <button className='Clear_Filter_Product'>Clear Product</button>
+        <button className='Clear_Filter_Product' onClick={clearFilter}  >Clear Product</button>
 
 
       </div>

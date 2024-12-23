@@ -1,6 +1,7 @@
 import { createContext, useContext, useEffect, useReducer } from "react";
 import { useProductContext } from "./ProductContext";
 import reducer from '../Reducer/FilterReducter'
+import { type } from "@testing-library/user-event/dist/type";
 // import { type } from "@testing-library/user-event/dist/type";
 // import { type } from "@testing-library/user-event/dist/type";
 
@@ -57,6 +58,12 @@ export const FilterContextProvider = ({ children }) => {
     }
 
 
+    // clear filter for all filter faetueere
+
+    const clearFilter = () => {
+        dispatch({ type: "CLEAR_FILTER" });
+    }
+
 
     useEffect(() => {
         dispatch({ type: "FILTER_SORT" })
@@ -70,7 +77,7 @@ export const FilterContextProvider = ({ children }) => {
 
 
     return (
-        <FilterContext.Provider value={{ ...state, setGridView, setListView, sorting, updateFilterProduct }}>
+        <FilterContext.Provider value={{ ...state, setGridView, setListView, sorting, updateFilterProduct,clearFilter }}>
             {children}
         </FilterContext.Provider>
     )

@@ -8,6 +8,7 @@ import { AiTwotoneSafetyCertificate } from 'react-icons/ai'
 import { FaPhone } from 'react-icons/fa'
 import MyImage from './MyImage'
 import Star from './Star'
+import Cart from './Cart'
 
 const API = "https://api.pujakaitem.com/api/products";
 
@@ -20,7 +21,7 @@ const SingleProduct = () => {
   useEffect(() => {
     // Start loading
     setLoading(true);
-    
+
     // Fetch product data
     getSingleProduct(`${API}?id=${id}`).then(() => {
       // Set loading to false once data is fetched
@@ -32,18 +33,27 @@ const SingleProduct = () => {
   if (loading) {
     return (
       <div className="loader-container">
-        <div className="loader"></div> 
+        <div className="loader"></div>
       </div>
     );
   }
+  // const [color,setColor] = useState([]);
 
-  const { name, company, price, description, stock, stars, reviews, image } = SingleProduct;
+  const { name, company, price, description, stock, stars, reviews, image, colors } = SingleProduct;
+
+
+  // setColor(colors)
+
+  console.log(SingleProduct);
 
   const handleIncrement = () => setQuantity(prev => prev + 1);
   const handleDecrement = () => setQuantity(prev => (prev > 1 ? prev - 1 : 1));
 
+  console.log(colors)
   return (
     <>
+
+
       <div className='SingleProduct-heading'>
         <Link to="/" className='home-icon'>Home / </Link>
         {name};
@@ -94,7 +104,10 @@ const SingleProduct = () => {
 
           <div className='SingleProduct-color'>
             Color:
-            <div className='color-green' title="Green" role="button" aria-label="Select Green color">
+
+            {stock > 0 && <Cart product={SingleProduct} />}
+
+            {/* <div className='color-green' title="Green" role="button" aria-label="Select Green color">
               <div className='tick'>✓</div>
             </div>
             <div className='color-yellow' title="Yellow" role="button" aria-label="Select Yellow color">
@@ -102,7 +115,7 @@ const SingleProduct = () => {
             </div>
             <div className='color-gray' title="Gray" role="button" aria-label="Select Gray color">
               <div className='tick'>✓</div>
-            </div>
+            </div> */}
           </div>
 
           <div className='SingleProduct-add-to-card-section'>
